@@ -1,0 +1,11 @@
+[package]
+name = "kgoat"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "KGOAT — Knowledge Graph Of All Things: a layer 2 phext format. Schema, node-scroll parser, and index builder."
+homepage = "https://phext.tech"
+repository = "https://github.com/wbic16/kgoat"
+
+[dependencies]
+libphext = "0.6.4"
