@@ -8,4 +8,4 @@ homepage = "https://phext.tech"
 repository = "https://github.com/wbic16/kgoat"
 
 [dependencies]
-libphext = "0.6.4"
+libphext = "0.6.6"
