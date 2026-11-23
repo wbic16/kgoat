@@ -103,9 +103,47 @@ sha256 0e4075a4…. **Federation fold, six homes: 27,586 nodes ·
 (7 stage-0 + 6 ietf gen + 5 trav + 3 research gen + 5 register
 gen), zero warnings.
 
-## Remaining leg of this stage
+## Cross-corpus leg — LANDED (EE ~358, 2026-11-23). Stage 2 complete.
 
-- Cross-corpus edges: the first stored edges between homes —
-  research → ietf `mentions` only where a scroll names an RFC as an
-  RFC (curated, verified by reading), and the Research Oracle
-  metric —measures→ the works it prices.
+`src/bin/kgoat-xedge-gen.rs` (DESIGN.md Addendum 7).
+
+**mentions (research → ietf): verified empty, nothing stored.**
+An exhaustive pattern search over all 1,271 research scrolls —
+"RFC <n>" in any case or spacing, "Request for Comments",
+"draft-ietf", "Internet-Draft", "STD/BCP <n>", "IETF", and the
+bare letters "rfc" case-insensitive — returns zero hits. The
+tracker never names an RFC in any form. The curated set is empty
+by evidence, reported as a finding: no mining, no invention
+(§5.4). A federation path query between the research and ietf
+homes correctly still finds no path.
+
+**measures (the Research Oracle): 36 edges.** The Oracle ledger
+(1.1.1/1.1.1/1.1.4; registry id 4) prices papers — a Novelty
+Index from each paper's delta record, and an Oracle Progress
+estimate of the whole tracker. Verified by reading the ledger
+entire: Papers 001–031 in ledger format; 032–034 Will-posted
+pieces taken in outside the sample, with estimates; 035's NI
+computed from its filed delta as bookkeeping. Studies carry no
+Novelty Index by charter and the Fringe chapter has no ledger
+mention — neither is priced, neither received an edge. Stored on
+the Oracle metric content node (research 1.1.1/1.3.1/1.2.4), w0,
+evidence = the ledger coordinate: measures → the 35 Paper
+chapters' delta-record work nodes, and measures → the research
+work node (the OP estimate measures the tracker whole). The
+paper set is computed from the sha-gated registry, never
+hand-listed. Applied to a copy (research-graph-x.phext,
+3,566,875 B, sha256 86262101…); the pre-edge layer stays on disk.
+
+Folds: research home with edges 2,543 nodes · 2,578 edges ·
+0 violations. **Federation, six homes: 27,586 nodes · 132,216
+edges · 11,323 registry entries · 0 violations**
+(federation-x-index.phext sha256 507d6a8b…). Traversal smoke:
+Oracle → Paper 035 delta record is one measures hop, printed
+with its evidence and hop stamp; Oracle → RFC 9110 finds no
+path, as it should. Tests: 28/28 green, zero warnings.
+
+Stage 2 is complete: research + the four registers carry graph
+layers, and the first curated edges beyond the part_of skeleton
+are stored. Next per SPEC §6: Stage 3 (entry — the plain §4.4
+form, riding phext-lattice), then Stage 4 (derivation and
+depth).
