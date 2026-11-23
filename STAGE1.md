@@ -98,7 +98,33 @@ informative 39,331 · kind-unspecified 12,623. Any consumer reading
 edges from the scrolls alone will undercount; the JSON is the
 complete store, as the corpus Home declares.
 
+## Surface leg — traversal service and node pages (§3.1 / §3.2)
+
+Added the same day (EE ~346): `src/bin/kgoat-trav.rs`, the traversal
+service in CLI form (the HTTP composition belongs to phext-lattice,
+Stage 3). It folds the graph live through the same `builder::build`
+the index is generated with — one reading of the graph, no second
+semantics. Commands: `node` (the node's page as text: statement,
+plain-words status with its receipt, connections as sentences),
+`neighbors` (1/n hops, filtered by edge type, kind, weight floor,
+status), `path` (shortest path returned with its derivation — every
+hop's stored edge, evidence pointer, and hop stamp; reverse-walked
+steps are marked, never hidden, §5.3), `page` (the §3.2 node page as
+HTML in the §3.3 design language), `near` (coordinate-distance
+ranking — the coordinate half of holographic search; the
+word→coordinate Singular merge binds when the service composes with
+phext-lattice, a named sub-gap).
+
+Smoke over the slice, all live: RFC 9110's page — 72 references out,
+96 citations in, implemented by Apache HTTP Server, curl, and nginx;
+path RFC 9110 → RFC 9111 in one references hop with its evidence;
+path RFC 2616 → RFC 9110 walked in reverse over 9110's stored edge
+and marked as such. Tests: 18/18 green (7 stage-0 + 6 generator +
+5 traversal).
+
 ## Next
 
-Stage 1's surface leg (traversal service §3.1 + node pages), then
-Stages 2–4 per SPEC §6.
+Stages 2–4 per SPEC §6: corpus graph layers (research.phext
+concepts/claims, registers as works/events/metrics, first cross-corpus
+edges), the §4.4 entry form riding phext-lattice, then derivation
+and depth.
